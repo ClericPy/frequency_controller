@@ -13,9 +13,6 @@ win32:
 rm -rf dist;rm -rf build;python3 setup.py bdist_wheel;python2 setup.py bdist_wheel;twine upload "dist/*";rm -rf dist;rm -rf build;rm -rf frequency_controller.egg-info
 """
 
-# optional_requires:
-#    uvloop: fastest loop for python3.5+ on non-win32 system
-
 py_version = sys.version_info
 install_requires = []
 
