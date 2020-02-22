@@ -1,5 +1,5 @@
 # frequency_controller [![PyPI version](https://badge.fury.io/py/frequency_controller.svg)](https://badge.fury.io/py/frequency_controller)[![Downloads](https://pepy.tech/badge/frequency_controller)](https://pepy.tech/project/frequency_controller)
-Limitations of frequency. Code snippets copy from [torequests](https://github.com/ClericPy/torequests).
+Limitations of frequency. Code snippets copied from [torequests](https://github.com/ClericPy/torequests).
 
 
 ## Intro
@@ -9,7 +9,7 @@ Limitations of frequency. Code snippets copy from [torequests](https://github.co
 >    2. Queue initial process is slower than create a generator
 > 2. Python3.8+ required the lock protection for async-generators.
 >    1. https://bugs.python.org/issue38559
->    2. But 3.6 / 3.7 do not have this feature
+>    2. But 3.6 / 3.7 don't have this feature
 > 3. Using timeit.default_timer for a better accuracy but little performance lost.
 >    1. Frequency.TIMER = timeit.default_timer
 
@@ -22,7 +22,7 @@ Limitations of frequency. Code snippets copy from [torequests](https://github.co
 ### 1. Multi-Thread Demo
 
 ```python
-from frequency_controller.sync_tools import Frequency
+from frequency_controller import Frequency
 from threading import Thread
 from time import strftime
 
@@ -55,11 +55,11 @@ if __name__ == "__main__":
 from asyncio import ensure_future, get_event_loop, wait
 from time import strftime
 
-from frequency_controller.async_tools import Frequency
+from frequency_controller import AsyncFrequency
 
 
 async def async_demo():
-    frequency = Frequency(2, 1)
+    frequency = AsyncFrequency(2, 1)
 
     async def task():
         async with frequency:
