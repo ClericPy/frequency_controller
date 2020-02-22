@@ -3,10 +3,10 @@ def test_async_frequency():
     from asyncio import ensure_future, get_event_loop
     from time import time
 
-    from frequency_controller.async_tools import Frequency
+    from frequency_controller import AsyncFrequency
 
     async def test_async():
-        frequency = Frequency(2, 1)
+        frequency = AsyncFrequency(2, 1)
 
         async def task():
             async with frequency:

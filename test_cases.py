@@ -1,14 +1,10 @@
-import sys
-if sys.version_info.major > 2:
-    from _test_py3_cases import test_async_frequency
-    test_async_frequency()
+from frequency_controller import Frequency, AsyncFrequency
 
 
 def test_sync_frequency():
     from concurrent.futures import ThreadPoolExecutor
     from time import time
 
-    from frequency_controller.sync_tools import Frequency
     # limit to 2 concurrent tasks each 1 second
     frequency = Frequency(2, 1)
 
@@ -27,6 +23,12 @@ def test_sync_frequency():
     assert result[2] - now > 1
     assert result[3] - now > 1
     assert result[4] - now > 2
+
+
+def test_async_frequency():
+    if AsyncFrequency is not None:
+        from _test_py3_cases import test_async_frequency
+        test_async_frequency()
 
 
 if __name__ == "__main__":
