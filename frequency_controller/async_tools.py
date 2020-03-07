@@ -4,19 +4,26 @@ from time import time
 
 class Frequency(object):
     """Frequency controller, means concurrent running n tasks every interval seconds."""
-    __slots__ = ("gen", "__aenter__", "repr", "lock")
+    __slots__ = ("gen", "__aenter__", "repr", "_lock")
     TIMER = time
 
-    def __init__(self, n=None, interval=0, loop=None):
+    def __init__(self, n=None, interval=0):
         if n:
             self.gen = self.generator(n, interval)
-            self.lock = Lock(loop=loop)
+            self._lock = None
             self.__aenter__ = self._acquire
             self.repr = f"Frequency({n}, {interval})"
         else:
             self.gen = None
             self.__aenter__ = self.__aexit__
             self.repr = "Frequency(unlimited)"
+
+    @property
+    def lock(self):
+        # lazy init loop
+        if self._lock is None:
+            self._lock = Lock()
+        return self._lock
 
     async def generator(self, n, interval):
         q = [0] * n
