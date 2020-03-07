@@ -1,4 +1,4 @@
-# frequency_controller [![PyPI version](https://badge.fury.io/py/frequency_controller.svg)](https://badge.fury.io/py/frequency_controller)[![Downloads](https://pepy.tech/badge/frequency_controller)](https://pepy.tech/project/frequency_controller)
+# frequency_controller [![PyPI](https://img.shields.io/pypi/v/frequency_controller?style=plastic)](https://pypi.org/project/frequency_controller/)[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/clericpy/frequency_controller/Python%20package?style=plastic)](https://github.com/ClericPy/frequency_controller/actions?query=workflow%3A%22Python+package%22)![PyPI - Wheel](https://img.shields.io/pypi/wheel/frequency_controller?style=plastic)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/frequency_controller?style=plastic)![PyPI - Downloads](https://img.shields.io/pypi/dm/frequency_controller?style=plastic)![PyPI - License](https://img.shields.io/pypi/l/frequency_controller?style=plastic)
 Limitations of frequency. Code snippets copied from [torequests](https://github.com/ClericPy/torequests).
 
 
