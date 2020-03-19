@@ -39,8 +39,7 @@ setup(
     license="MIT License",
     install_requires=install_requires,
     py_modules=["frequency_controller"],
-    python_requires=
-    ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.9.*",
+    python_requires=">=2.7",
     classifiers=[
         "License :: OSI Approved :: MIT License",
         'Programming Language :: Python',
