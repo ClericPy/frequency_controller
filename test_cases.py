@@ -23,6 +23,8 @@ def test_sync_frequency():
     assert result[2] - now > 1
     assert result[3] - now > 1
     assert result[4] - now > 2
+    assert frequency.to_dict() == {'n': 2, 'interval': 1}
+    assert frequency.to_list() == [2, 1]
 
 
 def test_async_frequency():
@@ -33,3 +35,4 @@ def test_async_frequency():
 
 if __name__ == "__main__":
     test_sync_frequency()
+    test_async_frequency()
