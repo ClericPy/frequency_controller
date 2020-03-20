@@ -20,6 +20,12 @@ class Frequency(object):
             self.__aenter__ = self.__aexit__
             self.repr = "Frequency(unlimited)"
 
+    def to_list(self):
+        return [self.n, self.interval]
+
+    def to_dict(self):
+        return {'n': self.n, 'interval': self.interval}
+
     @property
     def lock(self):
         # lazy init loop

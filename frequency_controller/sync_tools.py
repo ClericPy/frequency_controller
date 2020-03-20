@@ -20,6 +20,12 @@ class Frequency(object):
             self.gen = None
             self.__enter__ = self.__exit__
 
+    def to_list(self):
+        return [self.n, self.interval]
+
+    def to_dict(self):
+        return {'n': self.n, 'interval': self.interval}
+
     def generator(self, n=2, interval=1):
         q = [0] * n
         while 1:
