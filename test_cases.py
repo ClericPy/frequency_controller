@@ -33,3 +33,4 @@ def test_async_frequency():
 
 if __name__ == "__main__":
     test_sync_frequency()
+    test_async_frequency()
